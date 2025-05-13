@@ -25,7 +25,7 @@ export default {
     // Fetch todos from the backend
     async fetchTodos() {
       try {
-        const response = await fetch('https://backend-todo-app-xwrh.onrender.com/todos');  // Replace with your backend API URL
+        const response = await fetch('https://backend-todo-app-qpeg.onrender.com/todos');  // Replace with your backend API URL
         if (!response.ok) throw new Error('Failed to fetch todos');
         // const data = await response.json();
         this.todos = await response.json();
@@ -38,7 +38,7 @@ export default {
     async addTodo() {
       if (this.newTodo.trim() === '') return;
       try {
-        const response = await fetch('https://backend-todo-app-xwrh.onrender.com/todos', {
+        const response = await fetch('https://backend-todo-app-qpeg.onrender.com/todos', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -57,7 +57,7 @@ export default {
     // Remove a todo (send delete request to backend)
     async removeTodo(id) {
       try {
-        const response = await fetch(`https://backend-todo-app-xwrh.onrender.com/todos/${id}`, {
+        const response = await fetch(`https://backend-todo-app-qpeg.onrender.com/todos/${id}`, {
           method: 'DELETE'
         });
         if (!response.ok) throw new Error('Failed to delete todo');
@@ -70,7 +70,7 @@ export default {
     // Update the completion status of a todo (send update request to backend)
     async updateTodoStatus(todo) {
       try {
-        const response = await fetch(`https://backend-todo-app-xwrh.onrender.com/todos/${todo.id}`, {
+        const response = await fetch(`https://backend-todo-app-qpeg.onrender.com/todos/${todo.id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json'
